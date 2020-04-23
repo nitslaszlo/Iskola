@@ -7,6 +7,31 @@ using System.IO; // 1.f
 
 namespace Iskola
 {
+    // 7f.: Osztályt definiáló kódrészlet beillesztése
+    class JelszóGeneráló
+    {
+        private Random Rnd;
+
+        public JelszóGeneráló(Random r)
+        {
+            Rnd = r;
+        }
+
+        public string Jelszó(int jelszóHossz)
+        {
+            string jelszó = "";
+            while (jelszó.Length < jelszóHossz)
+            {
+                char c = (char)Rnd.Next(48, 123);
+                if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z'))
+                {
+                    jelszó += c;
+                }
+            }
+            return jelszó;
+        }
+    }
+
     class Tanuló // 2.f
     {
         public string Kezdés { get; private set; }
@@ -95,6 +120,13 @@ namespace Iskola
             {
                 Console.WriteLine("\tNincs megfelelő tanuló.");
             }
+
+            // 7.f.: Tanuló kiválasztása, kapott osztály példányosítása
+            Console.WriteLine("7. feladat: Jelszó generálása");
+            Random r = new Random();
+            Tanuló vt = tanulók[r.Next(0, tanulók.Count)];
+            JelszóGeneráló jg = new JelszóGeneráló(r);
+            Console.WriteLine($"\t{vt.Név} - {jg.Jelszó(8)}");
 
             Console.ReadKey();
         }
