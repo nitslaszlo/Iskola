@@ -11,7 +11,7 @@ namespace Iskola
     {
         static void Main(string[] args)
         {
-
+            Console.ReadKey();
         }
     }
 }
