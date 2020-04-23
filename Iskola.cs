@@ -7,7 +7,7 @@ using System.IO; // 1.f
 
 namespace Iskola
 {
-    class Tanuló
+    class Tanuló // 2.f
     {
         public string Kezdés { get; private set; }
         public string Osztály { get; private set; }
@@ -26,7 +26,7 @@ namespace Iskola
     {
         static void Main(string[] args)
         {
-            // 2. feladat:
+            // 2.f.:
             List<Tanuló> tanulók = new List<Tanuló>();
             foreach (var i in File.ReadAllLines("../../nevek.txt"))
             {
