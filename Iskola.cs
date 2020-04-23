@@ -12,6 +12,8 @@ namespace Iskola
         public string Kezdés { get; private set; }
         public string Osztály { get; private set; }
         public string Név { get; private set; }
+        // 4.f.:
+        public int NévHossz => Név.Length - Név.Split().Length + 1;
 
         public Tanuló(string sor)
         {
@@ -35,6 +37,25 @@ namespace Iskola
 
             // 3. f.:
             Console.WriteLine($"3. feladat: Az iskolába {tanulók.Count} tanuló jár.");
+
+            // 4.f:
+            Tanuló leghosszabbNevűTanuló = tanulók.First();
+            foreach (var i in tanulók.Skip(1))
+            {
+                if (i.NévHossz > leghosszabbNevűTanuló.NévHossz)
+                {
+                    leghosszabbNevűTanuló = i;
+                }
+            }
+            Console.WriteLine($"4. feladat: A leghosszabb ({leghosszabbNevűTanuló.NévHossz} karakter) nevű tanuló(k):");
+            foreach (var i in tanulók)
+            {
+                if (i.NévHossz == leghosszabbNevűTanuló.NévHossz)
+                {
+                    Console.WriteLine($"\t{i.Név}");
+                }
+            }
+
 
             Console.ReadKey();
         }
