@@ -33,7 +33,7 @@ namespace Iskola
                 tanulók.Add(new Tanuló(i));
             }
 
-            // 3. f.:
+            // 3.f.:
             Console.WriteLine($"3. feladat: Az iskolába {tanulók.Count} tanuló jár.");
 
             Console.ReadKey();
