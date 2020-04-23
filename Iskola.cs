@@ -35,10 +35,10 @@ namespace Iskola
                 tanulók.Add(new Tanuló(i));
             }
 
-            // 3. f.:
+            // 3.f.:
             Console.WriteLine($"3. feladat: Az iskolába {tanulók.Count} tanuló jár.");
 
-            // 4.f:
+            // 4.f.:
             Tanuló leghosszabbNevűTanuló = tanulók.First();
             foreach (var i in tanulók.Skip(1))
             {
