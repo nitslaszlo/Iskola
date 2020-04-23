@@ -15,6 +15,20 @@ namespace Iskola
         // 4.f.:
         public int NévHossz => Név.Length - Név.Split().Length + 1;
 
+        // 5.f.:
+        public string Azon
+        {
+            get
+            {
+                char évfolyamUtolsó = Kezdés[3];
+                string vnév3 = new string(Név.Take(3).ToArray()).ToLower();
+                string knév = Név.Split()[1];
+                string knév3 = new string(knév.Take(3).ToArray()).ToLower();
+                return évfolyamUtolsó + Osztály + vnév3 + knév3;
+            }
+        }
+
+
         public Tanuló(string sor)
         {
             string[] m = sor.Split(';');
@@ -35,10 +49,10 @@ namespace Iskola
                 tanulók.Add(new Tanuló(i));
             }
 
-            // 3. f.:
+            // 3.f.:
             Console.WriteLine($"3. feladat: Az iskolába {tanulók.Count} tanuló jár.");
 
-            // 4.f:
+            // 4.f.:
             Tanuló leghosszabbNevűTanuló = tanulók.First();
             foreach (var i in tanulók.Skip(1))
             {
@@ -55,6 +69,14 @@ namespace Iskola
                     Console.WriteLine($"\t{i.Név}");
                 }
             }
+
+            // 5.f.:
+            Console.WriteLine("5. feladat: Azonosítók");
+            Console.WriteLine($"\tElső: {tanulók.First().Név} - {tanulók.First().Azon}");
+            Console.WriteLine($"\tUtolsó: {tanulók.Last().Név} - {tanulók.Last().Azon}");
+
+
+
 
 
             Console.ReadKey();
