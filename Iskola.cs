@@ -124,9 +124,9 @@ namespace Iskola
             // 7.f.: Tanuló kiválasztása, kapott osztály példányosítása
             Console.WriteLine("7. feladat: Jelszó generálása");
             Random r = new Random();
-            Tanuló vt = tanulók[r.Next(0, tanulók.Count)];
-            JelszóGeneráló jg = new JelszóGeneráló(r);
-            Console.WriteLine($"\t{vt.Név} - {jg.Jelszó(8)}");
+            Tanuló választottTanuló = tanulók[r.Next(0, tanulók.Count)];
+            JelszóGeneráló jelszóGeneráló = new JelszóGeneráló(r);
+            Console.WriteLine($"\t{választottTanuló.Név} - {jelszóGeneráló.Jelszó(8)}");
 
             Console.ReadKey();
         }
