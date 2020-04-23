@@ -74,7 +74,28 @@ namespace Iskola
             Console.WriteLine("5. feladat: Azonosítók");
             Console.WriteLine($"\tElső: {tanulók.First().Név} - {tanulók.First().Azon}");
             Console.WriteLine($"\tUtolsó: {tanulók.Last().Név} - {tanulók.Last().Azon}");
-            
+
+            // 6.f.:
+            Console.Write("6. feladat: Kérek egy azonosítót [pl.: 4dvavkri]: ");
+            string inputAzon = Console.ReadLine();
+            Tanuló keresettTanuló = null; // keresett tanuló
+            foreach (var i in tanulók)
+            {
+                if (i.Azon == inputAzon)
+                {
+                    keresettTanuló = i;
+                    break;
+                }
+            }
+            if (keresettTanuló != null)
+            {
+                Console.WriteLine($"\t{keresettTanuló.Kezdés} {keresettTanuló.Osztály} {keresettTanuló.Név}");
+            }
+            else
+            {
+                Console.WriteLine("\tNincs megfelelő tanuló.");
+            }
+
             Console.ReadKey();
         }
     }
