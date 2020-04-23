@@ -49,6 +49,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Iskola.pdf" />
+    <None Include="Iskola_mintákkal.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="csharp.txt" />
