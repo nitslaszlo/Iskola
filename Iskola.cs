@@ -74,11 +74,7 @@ namespace Iskola
             Console.WriteLine("5. feladat: Azonosítók");
             Console.WriteLine($"\tElső: {tanulók.First().Név} - {tanulók.First().Azon}");
             Console.WriteLine($"\tUtolsó: {tanulók.Last().Név} - {tanulók.Last().Azon}");
-
-
-
-
-
+            
             Console.ReadKey();
         }
     }
